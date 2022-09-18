@@ -1,0 +1,258 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-09-18T04:01:59.626Z",
+    "end": "2022-09-18T04:03:37.994Z",
+    "duration": 98368,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51999eee-ecde-434e-86d0-f86772d65aa8",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0fcbd34c-9193-4b59-b879-65a56ac6fa19",
+          "title": "Test Case - 1",
+          "fullFile": "D:\\seleniam\\test\\firsttest.js",
+          "file": "\\test\\firsttest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Text is equal.",
+              "fullTitle": "Test Case - 1 Text is equal.",
+              "timedOut": null,
+              "duration": 1228,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var driver =await new webdriver.Builder().forBrowser('chrome').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/')\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Say hii to akil\",webdriver.Key.RETURN)\nlet text= await driver.findElement(By.xpath(\"//li[last()]\")).getText().then((res)=>{\n    return res\n})\n       // assert.strictEqual(text,\"hii to akil\")\n       text.should.equal(\"Say hii to akil\");\nawait driver.quit()",
+              "err": {},
+              "uuid": "91a26d38-6d0f-45d1-842a-2e1ef7cad44e",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "91a26d38-6d0f-45d1-842a-2e1ef7cad44e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1228,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "735ac5c4-31d8-4db8-8fc7-9d4f746e2ff0",
+          "title": "Test Case - 2",
+          "fullFile": "D:\\seleniam\\test\\secondtest.js",
+          "file": "\\test\\secondtest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Test Case - 2\"",
+              "fullTitle": "Test Case - 2 \"before each\" hook in \"Test Case - 2\"",
+              "timedOut": null,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "capability.name=this.title;\ndriver = new webdriver.Builder().usingServer(url).withCapabilities(capability).build();",
+              "err": {},
+              "uuid": "3b9b68d4-8236-4c8f-9419-e10ae2300693",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Test Case - 2\"",
+              "fullTitle": "Test Case - 2 \"after each\" hook in \"Test Case - 2\"",
+              "timedOut": null,
+              "duration": 8022,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "aab5b59b-d17a-4eaf-8fe5-a787c28776ec",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Text is equal.",
+              "fullTitle": "Test Case - 2 Text is equal.",
+              "timedOut": null,
+              "duration": 2,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "title=\"Text is equal\"\n// var driver =await new webdriver.Builder().forBrowser('chrome').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/')\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Say hii to akil\",webdriver.Key.RETURN)\nlet text= await driver.findElement(By.xpath(\"//li[last()]\")).getText().then((res)=>{\n    return res\n})\n       // assert.strictEqual(text,\"hii to akil\")\n       text.should.equal(\"Say hii to akil\");\n       driver.get(\"D:\\\\seleniam\\\\mochawesome-report\\\\mochawesome.html\")\n       // await driver.quit()",
+              "err": {
+                "message": "TypeError: Assignment to constant variable.",
+                "estack": "TypeError: Assignment to constant variable.\n    at Context.<anonymous> (test\\secondtest.js:27:14)",
+                "diff": null
+              },
+              "uuid": "73972f24-2b8d-40bc-83be-e012360f1844",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "73972f24-2b8d-40bc-83be-e012360f1844"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "aa2670e4-b0f3-4311-a153-15aa39a830e2",
+          "title": "Test Case - 2",
+          "fullFile": "D:\\seleniam\\test\\parameter.js",
+          "file": "\\test\\parameter.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Text is equal for Chrome,93.0,Windows 10 .",
+              "fullTitle": "Test Case - 2 Text is equal for Chrome,93.0,Windows 10 .",
+              "timedOut": null,
+              "duration": 7329,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "capability.browserName=item.browser\ncapability.browserVersion=item.bv\ncapability['LT:Options'].platformName=item.os\ncapability.name=this.title;\ndriver = new webdriver.Builder().usingServer(url).withCapabilities(capability).build();\n// var driver =await new webdriver.Builder().forBrowser('chrome').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/')\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Say hii to akil\",webdriver.Key.RETURN)\nlet text= await driver.findElement(By.xpath(\"//li[last()]\")).getText().then((res)=>{\n    return res\n})\n       // assert.strictEqual(text,\"hii to akil\")\n       text.should.equal(\"Say hii to akil\");\n       driver.get(\"D:\\\\seleniam\\\\mochawesome-report\\\\mochawesome.html\")\nawait driver.quit()",
+              "err": {},
+              "uuid": "3b9f14a1-e626-487b-9dca-7c7599c90806",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Text is equal for Firefox,91.0,Windows 10 .",
+              "fullTitle": "Test Case - 2 Text is equal for Firefox,91.0,Windows 10 .",
+              "timedOut": null,
+              "duration": 27696,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "capability.browserName=item.browser\ncapability.browserVersion=item.bv\ncapability['LT:Options'].platformName=item.os\ncapability.name=this.title;\ndriver = new webdriver.Builder().usingServer(url).withCapabilities(capability).build();\n// var driver =await new webdriver.Builder().forBrowser('chrome').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/')\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Say hii to akil\",webdriver.Key.RETURN)\nlet text= await driver.findElement(By.xpath(\"//li[last()]\")).getText().then((res)=>{\n    return res\n})\n       // assert.strictEqual(text,\"hii to akil\")\n       text.should.equal(\"Say hii to akil\");\n       driver.get(\"D:\\\\seleniam\\\\mochawesome-report\\\\mochawesome.html\")\nawait driver.quit()",
+              "err": {},
+              "uuid": "30e56836-e369-4d05-a590-8eadb382330e",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Text is equal for Chrome,93.0,Windows 11 .",
+              "fullTitle": "Test Case - 2 Text is equal for Chrome,93.0,Windows 11 .",
+              "timedOut": null,
+              "duration": 62925,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "capability.browserName=item.browser\ncapability.browserVersion=item.bv\ncapability['LT:Options'].platformName=item.os\ncapability.name=this.title;\ndriver = new webdriver.Builder().usingServer(url).withCapabilities(capability).build();\n// var driver =await new webdriver.Builder().forBrowser('chrome').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/')\nawait driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Say hii to akil\",webdriver.Key.RETURN)\nlet text= await driver.findElement(By.xpath(\"//li[last()]\")).getText().then((res)=>{\n    return res\n})\n       // assert.strictEqual(text,\"hii to akil\")\n       text.should.equal(\"Say hii to akil\");\n       driver.get(\"D:\\\\seleniam\\\\mochawesome-report\\\\mochawesome.html\")\nawait driver.quit()",
+              "err": {},
+              "uuid": "d4075b6e-927f-4a6a-a1ba-b823f4f5e282",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b9f14a1-e626-487b-9dca-7c7599c90806",
+            "30e56836-e369-4d05-a590-8eadb382330e",
+            "d4075b6e-927f-4a6a-a1ba-b823f4f5e282"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 97950,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

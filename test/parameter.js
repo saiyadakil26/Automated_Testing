@@ -15,15 +15,20 @@ describe("Test Case - 2",()=>{
     const host="hub.lambdatest.com/wd/hub";
     const url="https://"+user+":"+Key+"@"+host;
 
-    beforeEach(()=>{
-        capability.name=this.title;
-        driver = new webdriver.Builder().usingServer(url).withCapabilities(capability).build();
-    })
-    afterEach(async()=>{
-        await driver.quit();
-    })
+   var parameter=[{browser:"Chrome",bv:"93.0",os:"Windows 10"},
+               {browser:"Firefox",bv:"91.0",os:"Windows 10"},
+               {browser:"Chrome",bv:"93.0",os:"Windows 11"}]
+    
 
-    it("Text is equal.",async()=>{
+    parameter.forEach((item)=>{
+
+    it(`Text is equal for ${item.browser},${item.bv},${item.os} .`,async()=>{
+        capability.browserName=item.browser
+        capability.browserVersion=item.bv
+        capability['LT:Options'].platformName=item.os
+        capability.name=this.title;
+
+        driver = new webdriver.Builder().usingServer(url).withCapabilities(capability).build();
         // var driver =await new webdriver.Builder().forBrowser('chrome').build();
         await driver.get('https://lambdatest.github.io/sample-todo-app/')
         await driver.findElement(By.id("sampletodotext")).sendKeys("Say hii to akil",webdriver.Key.RETURN)
@@ -32,12 +37,11 @@ describe("Test Case - 2",()=>{
         })
        // assert.strictEqual(text,"hii to akil")
        text.should.equal("Say hii to akil");
-       //driver.get("D:\\seleniam\\mochawesome-report\\mochawesome.html")
-       // await driver.quit()
+        await driver.quit()
         
     })
+
 })
 
-// const ex = async()=>{
-// }
-// ex()
+
+})
